@@ -1,15 +1,13 @@
 import React from "react";
 import memeDatas from './memesData'
 
-
 export default function Content() {
     const [image, setImage] = React.useState({
         randomImage:"https://i.imgflip.com/c2qn.jpg",
-        topText: "B is so gay",
-        bottomText: "B is so gay"
+        topText: "",
+        bottomText: ""
     })
     
-
     function test() {
         const memesArray = memeDatas.data.memes
         const random = Math.floor(Math.random()*memesArray.length)
