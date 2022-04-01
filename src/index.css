@@ -21,6 +21,7 @@ header {
   display: flex;
   justify-items: center;
   align-items: center;
+  padding: 0.5rem;
 }
 
 .title-logo{
@@ -45,8 +46,6 @@ header {
   height: 25%;
   padding: 3rem;
   margin: 2rem;
-  border: 1px solid black;
-
 }
 
 input {
@@ -63,20 +62,21 @@ input {
   width: 100%;
   display: flex;
   justify-content: center;
-  border: 1px solid black;
-
 }
 
 button {
-  height: 50px;
+  height: 55px;
   width: 100%;
   border-radius: 10px;
   border: 1px solid black;
-  padding: 0.5rem;
   font-size: 1rem;
   font-weight: 1000;
   background: linear-gradient(90deg, pink, purple);
   color: white;
+}
+
+button:hover{
+  transform: scale(1.09);
 }
 
 .meme-container {
