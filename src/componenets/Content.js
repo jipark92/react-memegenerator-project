@@ -5,8 +5,8 @@ import memeDatas from './memesData'
 export default function Content() {
     const [image, setImage] = React.useState({
         randomImage:"https://i.imgflip.com/c2qn.jpg",
-        topText: "",
-        bottomText: ""
+        topText: "B is so gay",
+        bottomText: "B is so gay"
     })
     
 
@@ -36,7 +36,7 @@ export default function Content() {
                     placeholder="shut up" 
                     className="input-1" 
                     name="topText"
-                    onClick={getText}
+                    onChange={getText}
                 />
 
                 <input 
@@ -44,7 +44,7 @@ export default function Content() {
                     placeholder="take my money" 
                     className="input-2"
                     name="bottomText"
-                    onClick={getText}
+                    onChange={getText}
                 />
             </div>
             <div className="button-container">
