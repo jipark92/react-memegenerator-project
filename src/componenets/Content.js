@@ -2,29 +2,60 @@ import React from "react";
 import memeDatas from './memesData'
 
 
-export default function Content(props) {
-    const [image, setImage] = React.useState("")
+export default function Content() {
+    const [image, setImage] = React.useState({
+        randomImage:"https://i.imgflip.com/c2qn.jpg",
+        topText: "",
+        bottomText: ""
+    })
     
 
     function test() {
         const memesArray = memeDatas.data.memes
         const random = Math.floor(Math.random()*memesArray.length)
-        setImage(memesArray[random].url)
+        const url = memesArray[random].url
+        setImage(prevImage =>({
+            ...prevImage,
+            randomImage: url
+        }))
+    }
+
+    function getText(e) {
+        setImage(prevImage => {
+            return {
+                ...prevImage,
+                [e.target.name]: e.target.value
+            }
+        })
     }
 
     return (
         <div className="content">
             <div className="input-container">
-                <input type="text" placeholder="shut up" className="input-1"/>
-                <input type="text" placeholder="take my money" className="input-2"/>
+                <input type="text" 
+                    placeholder="shut up" 
+                    className="input-1" 
+                    name="topText"
+                    onClick={getText}
+                />
+
+                <input 
+                    type="text" 
+                    placeholder="take my money" 
+                    className="input-2"
+                    name="bottomText"
+                    onClick={getText}
+                />
             </div>
             <div className="button-container">
                 <button onClick={test}>Get a new meme image</button>
             </div>
             <div className="meme-container">
-                <p className="text-1"></p>
-                <img src={image} alt="meme" className="meme-image"/>
-                <p className="text-2"></p>
+                <p className="text-1">{image.topText}</p>
+
+                <img src={image.randomImage} className="meme-image"/>
+                
+                <p className="text-2">{image.bottomText}</p>
             </div>
         </div>
     )
