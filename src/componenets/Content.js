@@ -22,9 +22,9 @@ export default function Content(props) {
                 <button onClick={test}>Get a new meme image</button>
             </div>
             <div className="meme-container">
-                <p className="text-1">hello</p>
+                <p className="text-1"></p>
                 <img src={image} alt="meme" className="meme-image"/>
-                <p className="text-2">hello</p>
+                <p className="text-2"></p>
             </div>
         </div>
     )
